@@ -1,6 +1,6 @@
 package com.revature.mydatastructures;
 
-public interface List extends Collection{
+public interface List<T> extends Collection<T>{
 	
 	/*
 	 * Homogenous inhertiance : extends 
@@ -18,15 +18,15 @@ public interface List extends Collection{
 	// List is a bit more flexible, it manages more memory. 
 	// Lists are indexed. 
 	
-	public boolean add(String dataItem, int index);
+	public boolean add(T dataItem, int index);
 	
-	public boolean addAll(List itemList);
+	public boolean addAll(List<T> itemList);
 	
-	public boolean contains(String s);
+	public boolean contains(T s);
 	
-	public String itemAtIndex(int index);  //get the item at a position
+	public T itemAtIndex(int index);  //get the item at a position
 	
-	public int indexOf(String item); //get the item's index 
+	public int indexOf(T item); //get the item's index 
 	
 	public boolean remove(int index); 
 	
@@ -35,7 +35,7 @@ public interface List extends Collection{
 	//Levaraging Polymorphsim. 
 	//We want a method to be flexible in taking different arguments. 
 	
-	public boolean remove(String item);
+	public boolean remove(T item);
 	
 	
 	

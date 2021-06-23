@@ -2,7 +2,7 @@ package com.revature.mydatastructures;
 
 public class CollectionChrisImpl implements Collection{
 	
-	String[] hiddenDataStructure;
+	Object[] hiddenDataStructure;
 
 	
 	public CollectionChrisImpl(){
@@ -32,7 +32,7 @@ public class CollectionChrisImpl implements Collection{
 //		int insertion = 0; // first element of our array 
 		
 		
-		String[] newArray = new String[this.hiddenDataStructure.length + 1]; //I'm going to create a new array with one extra position. 
+		Object[] newArray = new Object[this.hiddenDataStructure.length + 1]; //I'm going to create a new array with one extra position. 
 		
 		for(int i = 0; i < this.hiddenDataStructure.length; i++) {
 			newArray[i] = this.hiddenDataStructure[i]; //we're copying over!
@@ -49,10 +49,18 @@ public class CollectionChrisImpl implements Collection{
 	public void print() {
 		// TODO Auto-generated method stub
 		
-		for(String dataItem: this.hiddenDataStructure) {
+		for(Object dataItem: this.hiddenDataStructure) {
 			System.out.println(dataItem);
 		}
 		
+	}
+
+
+
+	@Override
+	public boolean add(Object dataItem) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

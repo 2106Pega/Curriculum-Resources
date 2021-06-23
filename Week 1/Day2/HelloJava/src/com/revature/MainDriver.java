@@ -1,9 +1,10 @@
 package com.revature;
 
+
+import com.example.Apple;
 import com.revature.mydatastructures.Collection;
 import com.revature.mydatastructures.CollectionChrisImpl;
-import com.revature.mydatastructures.FullCollectionImpl;
-import com.revature.mydatastructures.PerformanceImpl;
+import com.revature.mydatastructures.ListImpl;
 
 public class MainDriver {
 	
@@ -115,8 +116,12 @@ public class MainDriver {
 		
 		
 		String food1 = "Apples";
+		Apple actualApple = new Apple();
 		String food2 = "Kiwi";
 		String food3 = "Banana";
+		
+		Collection newCollection = new CollectionChrisImpl();
+		newCollection.add(actualApple);
 		
 		String[] oneLineFoodList = {food1,food2,food3}; //declaring and initalising and assigning food objects. 
 		
@@ -159,7 +164,27 @@ public class MainDriver {
 		// my way of deleting everything!
 		
 		
-		foodCollection.print();
+
+		
+		String s = "simple String";
+		
+		Apple a = new Apple();
+		
+		Object o = new Object();
+		
+		
+		o = s;
+		
+		o = a;
+		
+		
+		
+		
+		Collection<String> stringCollection = new ListImpl<String,Integer,String>();
+		
+		Collection<Apple> appleCollection = new ListImpl<Apple,Object,Apple>();
+		
+		Collection<Object> objectCollection = new ListImpl<Object,Apple,Object>();
 	
 		
 	}

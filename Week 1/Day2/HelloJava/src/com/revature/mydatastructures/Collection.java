@@ -1,6 +1,8 @@
 package com.revature.mydatastructures;
 
-public interface Collection {
+public interface Collection<T> {
+//	<T> is a placeholder for my data objects, I can accept any object type but still retain it's type identity. 
+//	Also ensures type saftey, so different object types don't get passed through. 
 	
 	/*
 	 * I want Collection to be a flexible data structure for me 
@@ -22,6 +24,8 @@ public interface Collection {
 	 * 
 	 * 
 	 * What is a generic?
+	 * 
+	 * 
 	 * 		Takes in a datatype. 
 	 * 
 	 */
@@ -30,7 +34,7 @@ public interface Collection {
 	
 	public int size();
 	
-	public boolean add(String dataItem);
+	public boolean add(T dataItem);
 	
 	public void print();
 
