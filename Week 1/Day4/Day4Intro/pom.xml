@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>Day4Intro</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <!-- 
+  
+  		What is Maven?
+  			Maven is a dependency manager and a build automation tool.
+  			It allows us to integrate external libraries and packages into our application (more easily) 
+  			It also makes it easier to compile our maven project into a distributablle format - i.e. a Jar or War file. 
+  			(Build lifecycle) 
+  			
+  		What is a dependency?
+  				An external program that our project/class/program will utilise (and so be reliant on)
+  				A library of code. 
+  				
+  		What is POM?
+  			Project Object Model. These allow us to configure our project, it is a representation of the project that we 
+  				can manipulate, using xml syntax. 
+   -->
+   
+   <properties>
+   		<maven.compiler.source>1.8</maven.compiler.source>
+   		<maven.compiler.target>1.8</maven.compiler.target>
+   </properties>
+   
+   
+</project>
