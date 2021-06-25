@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>HelloJUnit</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  		<maven.compiler.source>1.8</maven.compiler.source>
+  		<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <dependencies>
+  		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+  		
+  		<!-- 
+  				Log4J is a logging framework that makes logging a lot easier for us. 
+  				However, it still needs some additional configuration. 
+  		
+  		 -->
+  		 
+		  		 <!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.13.1</version>
+		    <scope>test</scope>
+		</dependency>
+  		 
+  		 <!-- 
+  		 		JUnit is a testing framework that makes testing a lot easier for us. 
+  		  -->
+  		  
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-core</artifactId>
+		    <version>3.3.3</version>
+		    <scope>test</scope>
+		</dependency>
+
+		
+		<!-- 
+			This is a dependency that will help us with JUnit, to help mock perfect objects
+		 -->
+  		  
+  		
+  </dependencies>
+</project>
