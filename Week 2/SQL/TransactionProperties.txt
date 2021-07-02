@@ -1,0 +1,28 @@
+Transaction (with DB)?
+	Set of queries.
+
+What is a query?
+	record retrieval. 
+	DQL.
+	Applicable to any CRUD operations on our database. 
+	Queries applie to any DML statemebts, create, read, update and delete. 
+	(DML/DQL)
+
+
+Properties that our transactions have to follow. 
+	ACID. 
+	Atomic : all the queries have to be executed or none of them do. 
+	Consistency: Ensure that the database structure stays the same after a transaction. 
+	Isolation: Exclusivity of a transaction when interacting with our db. 
+		(Transaction does not intefere with another transaction)
+	
+		Serializable > Repeatable Read > Read Committed > Read Uncommitted. 
+
+		What does isolation levels stop?
+			Dirty Reads : a transaction reads something that has not 
+				been committed to the database. 
+			Non Repeatable reads 
+			Phantom Reads 
+
+	Durablity: Once a transaction has been committed, it will remain committed. 
+		(regardless of local system failure). 
