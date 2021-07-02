@@ -17,6 +17,7 @@ public class ConnectionFactory {
 	 * Connection 
 	 * Statement
 	 * PreparedStatment
+	 * CallableStatement
 	 */
 	
 	/*
