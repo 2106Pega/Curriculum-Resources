@@ -1,0 +1,15 @@
+* {
+    /* Will select every single element in our webpage */
+}
+
+p.myFirstClass {
+    /* will select p elements that are of class myFirstClass*/
+}
+
+div > p {
+    /* selecting elements within other elements, e.g. child paragraph tags wihtin div tags. */
+}
+
+div.titleClass > .otherTiltle {
+    
+}

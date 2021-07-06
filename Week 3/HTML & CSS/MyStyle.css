@@ -1,0 +1,24 @@
+body{
+    /* background-color: seagreen; */
+    color: gold;
+}
+p {
+    color: fuchsia;
+}
+.myFirstClass{ /* This is a class, used to group together elements for styling */
+    color: olivedrab;
+    /* text-align: center; */
+}
+
+#myTitleSection{ /* Is designed to only target a single element!*/
+    /* text-align: right; */
+}
+
+#MyForm{
+    background-color: blue;
+    text-align: center;
+    margin: 5%;
+    /* border: 100; */
+    border-style: dashed;
+    padding: 5%;
+}
