@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Welcome to bubbling</h3>
+    <!-- Bubbling is the idea that events will propogate from child to parent-->
+    <div>
+        <form onclick="alert('form')">
+            <div onclick=" event.stopPropagation(); alert('div')">
+                <p onclick="alert('paragraph')">
+                    Look at this beautiful webpage
+                </p>
+            </div>
+        </form>
+        <!-- Captruing 
+                Capturing is when we stop an event propagating from child to parent. 
+        -->
+    </div>
+    <!-- <script src="Bubbling.js"></script> -->
+</body>
+</html>
