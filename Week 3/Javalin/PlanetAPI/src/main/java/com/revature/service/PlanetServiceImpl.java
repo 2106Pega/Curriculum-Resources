@@ -19,4 +19,11 @@ public class PlanetServiceImpl implements PlanetService {
 		return planetList;
 	}
 
+	@Override
+	public boolean createPlanet(Planet newPlanet) {
+		
+		return pDao.insertPlanet(newPlanet);
+		
+	}
+
 }

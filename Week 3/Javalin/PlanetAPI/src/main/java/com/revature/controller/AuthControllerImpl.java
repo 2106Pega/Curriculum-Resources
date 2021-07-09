@@ -20,13 +20,15 @@ public class AuthControllerImpl implements AuthController {
 		
 		if(authService.authenticateUser(username, password)) {
 			
-			ctx.status(418);
+			ctx.status(200);
+			ctx.redirect("view-planets.html");
+			//if user doesn't exists you'd set it to 407 
 			
 			
 		}else {
 			
 			ctx.status(507);
-			ctx.redirect("https://javalin.io/");
+			ctx.redirect("login.html");
 		}
 		
 		System.out.println(username);

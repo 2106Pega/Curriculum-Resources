@@ -22,18 +22,23 @@ public class MainDriver {
 		
 		
 		Javalin app = Javalin.create(
-//				config -> {
-//					config.addStaticFiles("/public");
-//				}
+				config -> {
+					config.addStaticFiles("/public");
+				}
 			).start(9000);
 		
 		
 		app.post(LOGIN_PATH, ctx -> authController.login(ctx));
 		app.get(PLANET_PATH, ctx -> planetController.getAllPlanets(ctx));
+		app.post(PLANET_PATH, ctx -> planetController.postPlanet(ctx));
+		
+		//recreate the login method!
+		//app.delete
+		//app.put 
 		
 		
-		PlanetDao pDao = new PlanetDaoImpl();
-		System.out.println(pDao.selectAllPlanets());
+		//cookies and sessions and tokens!
+	
 		
 		
 	}

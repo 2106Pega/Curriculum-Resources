@@ -8,4 +8,6 @@ public interface PlanetService {
 	
 	public List<Planet> getAllPlanets();
 
+	public boolean createPlanet(Planet newPlanet);
+
 }
