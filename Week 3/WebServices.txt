@@ -1,0 +1,45 @@
+What is a Web Service?
+	AWS is an example of a Web Service. 
+	A functionality of a software or application being offered over a network 
+	(the network happens to be the world wide web)
+	Can include any type of software, application or cloud technolgies. 
+
+	Why not send over services via a jar file?
+		Platform Dependence 
+			System that can run Java. (have a jvm)
+			c#,python,ruby developers
+
+		Update anamolies 
+			They'll have to find a new version or 
+			risk being outdated. 
+
+		Requiring DB access 
+			Give them our DB access credentials. 
+
+
+How do we communicate over the web?
+	We use HTTP: Hypertext Transfer protocol 
+
+	Request (Client will send request) 
+		URI - Uniform Resource Identifier 
+		Method/Verb - Tells the server what to do with the payload.
+			GET: Read 
+			POST: Create
+			PUT: Update 
+			DELETE: Delete 
+			PATCH: Partial Update... 
+			OPTIONS:
+			HEAD:
+			TRACE: 
+		Header - Metadata we provide with our payload
+		Body - payload
+
+	Response (Server will send a response back) 
+		Status line - 3 digit number that specifies what happened!
+			100s: Infromational 
+			200s: Success (200 successful request, 201 successfully created)
+			300s: Redirection 
+			400s: Client Errors (404 - resource not found, 405 - Method not allowed)
+			500s: Server Errors (500 - Internal Server Error)
+		Header - Metadata we provide with our payload 
+		Body - payload 
