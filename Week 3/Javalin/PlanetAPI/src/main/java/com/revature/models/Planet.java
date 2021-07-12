@@ -4,11 +4,11 @@ import java.util.Objects;
 
 public class Planet {
 	
-	private int id;
+	private Integer id;
 	private String name;
 	private String description;
-	private boolean rings;
-	private double numberOfMoons;
+	private Boolean rings;
+	private Double numberOfMoons;
 	public Planet() {
 		super();
 		// TODO Auto-generated constructor stub

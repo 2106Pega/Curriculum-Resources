@@ -85,20 +85,140 @@ public class PlanetDaoImpl implements PlanetDao {
 
 	@Override
 	public Planet selectPlanetByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM planets where planet_name = ?;";
+		
+		//creating a List, so we can handle multiple entries with the same name. 
+		List<Planet> pList = new ArrayList<>();
+		
+		//try with resources syntax 
+		try(Connection conn = ConnectionFactory.getConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, name);
+			
+			//we expect rows and columns back from our db 
+			ResultSet rs = ps.executeQuery();
+			
+			
+			//we want to convert those columsn and rows into objects. 
+			while(rs.next()) {
+				pList.add(new Planet(
+						rs.getInt("planet_id"),
+						rs.getString("planet_name"),
+						rs.getString("planet_description"),
+						rs.getBoolean("has_rings"),
+						rs.getInt("number_of_moons")
+						));
+			}
+			
+		}catch (SQLException e) {
+			
+		}
+		
+		return pList.get(0); //we'll just return the first one we can get. 
 	}
 
 	@Override
 	public Planet selectPlanetById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM planets where plnaet_id = ?;";
+		
+		Planet planet = null;
+		
+		//try with resources syntax 
+		try(Connection conn = ConnectionFactory.getConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, id);
+			
+			//we expect rows and columns back from our db 
+			ResultSet rs = ps.executeQuery();
+			
+			//we want to convert those columsn and rows into objects. 
+			while(rs.next()) {
+				planet = new Planet(
+						rs.getInt("planet_id"),
+						rs.getString("planet_name"),
+						rs.getString("planet_description"),
+						rs.getBoolean("has_rings"),
+						rs.getInt("number_of_moons")
+						);
+			}
+			
+		}catch (SQLException e) {
+			
+		}
+		
+		return planet;
+	
 	}
 
 	@Override
 	public boolean updatePlanetsRings(boolean ringStatus, int planetId) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		String sql = "UPDATE planets SET has_rings = ? WHERE planet_id =?";
+		
+		//try with resources syntax 
+				try(Connection conn = ConnectionFactory.getConnection()){
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					
+					ps.setBoolean(1, ringStatus);
+					ps.setInt(2, planetId);
+					
+					ps.execute();
+					
+				}catch (SQLException e) {
+					return false;
+				}
+		
+		
+		return true;
+	}
+
+	@Override
+	public boolean deletePlanet(Planet p) {
+		String sql = "DELETE FROM planets WHERE planet_id =?";
+		
+		//try with resources syntax 
+				try(Connection conn = ConnectionFactory.getConnection()){
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					
+					ps.setInt(1, p.getId());
+					
+					ps.execute();
+					
+				}catch (SQLException e) {
+					return false;
+				}
+		
+		
+		return true;
+	}
+
+	@Override
+	public boolean updatePlanet(Planet p) {
+		String sql = "UPDATE planets SET has_rings = ? WHERE planet_id =?";
+		
+		//try with resources syntax 
+				try(Connection conn = ConnectionFactory.getConnection()){
+					
+					PreparedStatement ps = conn.prepareStatement(sql);
+					
+					ps.setBoolean(1, p.isRings());
+					ps.setInt(2, p.getId());
+					
+					ps.execute();
+					
+				}catch (SQLException e) {
+					return false;
+				}
+		
+		
+	
+		return true;
 	}
 
 }

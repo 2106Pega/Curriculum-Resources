@@ -18,4 +18,8 @@ public interface PlanetDao {
 	
 	//UPDATE
 	boolean updatePlanetsRings(boolean ringStatus, int planetId);
+	boolean updatePlanet(Planet p);
+	
+	//DELETE
+	boolean deletePlanet(Planet p);
 }

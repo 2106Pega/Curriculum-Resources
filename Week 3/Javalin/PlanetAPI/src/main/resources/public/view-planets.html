@@ -21,14 +21,33 @@
             
         </form>
 
+<form action="deletePlanet" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder = "Planet name for deletion" name="name">
+                
+            <button type="submit" class="btn btn-primary">Delete Button</button>
+            </div>
+            
+        </form>
+        
+        <div>
+            <div class="form-group">
+                
+            <input type="text" class="form-control" placeholder = "Planet name for updating" id="name">
+            <input type="text" class="form-control" placeholder = "New Ring Status" id="rings">
+            <button id = "updateButton" type="submit" class="btn btn-primary">Update Button</button>
+            </div>
+            
+        </div>
 
-<table id= "planet-table" class="table">
+<table id= "planet-table" onClick="click" class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Number Of Moons</th>
+      <th scope = "col">Ring status</th>
     </tr>
   </thead>
   

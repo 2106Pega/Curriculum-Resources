@@ -8,5 +8,11 @@ public interface PlanetController {
 	
 	
 	public void postPlanet(Context ctx);
+	
+	void updatePlanet(Context ctx);
+	
+	void deletePlanetWithJSON(Context ctx);
+	
+	void deletePlanet(Context ctx);
 
 }

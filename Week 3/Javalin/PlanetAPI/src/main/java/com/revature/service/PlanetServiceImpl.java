@@ -26,4 +26,32 @@ public class PlanetServiceImpl implements PlanetService {
 		
 	}
 
+	@Override
+	public boolean deletePlanet(Planet p) {
+
+
+		return pDao.deletePlanet(p);
+	}
+
+	@Override
+	public boolean updatePlanet(Planet p) {
+		// TODO Auto-generated method stub
+		return pDao.updatePlanet(p);
+	}
+
+	@Override
+	public Planet getPlanetByName(String name) {
+
+		return pDao.selectPlanetByName(name);
+	}
+
+	@Override
+	public boolean updatePlanet(Planet p, boolean rings) {
+		// TODO Auto-generated method stub
+			
+		p.setRings(rings);
+		return pDao.updatePlanet(p);
+		
+	}
+
 }

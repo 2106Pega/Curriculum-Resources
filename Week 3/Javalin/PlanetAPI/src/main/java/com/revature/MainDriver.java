@@ -31,6 +31,9 @@ public class MainDriver {
 		app.post(LOGIN_PATH, ctx -> authController.login(ctx));
 		app.get(PLANET_PATH, ctx -> planetController.getAllPlanets(ctx));
 		app.post(PLANET_PATH, ctx -> planetController.postPlanet(ctx));
+		app.post("/deletePlanet", ctx -> planetController.deletePlanet(ctx));
+		
+		app.put(PLANET_PATH, ctx -> planetController.updatePlanet(ctx));
 		
 		//recreate the login method!
 		//app.delete
