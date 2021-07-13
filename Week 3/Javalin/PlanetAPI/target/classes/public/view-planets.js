@@ -55,9 +55,9 @@ function updatePlanet(){
 				console.log("awaiting request");
 				break;
 			case 4: 
-				console.log("FINISHED!!!!")
+				console.log(xhr.status)
 				
-				if(xhr.status == 999){
+				if(xhr.status == 200){
 					grabPlanets();
 				}
 		}
@@ -104,9 +104,9 @@ function grabPlanets(){
 				console.log("awaiting request");
 				break;
 			case 4: 
-				console.log("FINISHED!!!!")
+				console.log(xhr.status)
 				
-				if(xhr.status == 418){
+				if(xhr.status == 200){
 					console.log(xhr.responseText);
 					
 					let planetList = JSON.parse(xhr.responseText);

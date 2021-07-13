@@ -21,6 +21,10 @@ public class AuthControllerImpl implements AuthController {
 		if(authService.authenticateUser(username, password)) {
 			
 			ctx.status(200);
+			
+			ctx.cookieStore("user",authService.createToken(username));
+			
+			
 			ctx.redirect("view-planets.html");
 			//if user doesn't exists you'd set it to 407 
 			
@@ -34,6 +38,21 @@ public class AuthControllerImpl implements AuthController {
 		System.out.println(username);
 		System.out.println(password);
 
+	}
+
+	
+	@Override
+	public void logout(Context ctx) {
+		ctx.clearCookieStore();
+		System.out.println("hi!");
+		ctx.redirect("login.html");
+		
+	}
+
+	@Override
+	public boolean checkUser(Context ctx) {
+		
+		return authService.validateToken(ctx.cookieStore("user"));
 	}
 
 }

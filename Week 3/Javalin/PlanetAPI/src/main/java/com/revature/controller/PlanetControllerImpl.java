@@ -16,13 +16,18 @@ import io.javalin.http.Context;
 public class PlanetControllerImpl implements PlanetController {
 
 	private PlanetService planetService= new PlanetServiceImpl();
+	private AuthController authController = new AuthControllerImpl();
 	
 	@Override
 	public void getAllPlanets(Context ctx) {
-		// TODO Auto-generated method stub
-
-		ctx.status(418);
-		ctx.json(planetService.getAllPlanets());
+		
+		if(authController.checkUser(ctx)) {
+			ctx.status(200);
+			ctx.json(planetService.getAllPlanets());
+		}else {
+			ctx.status(405);
+		}
+		
 		
 		
 	}

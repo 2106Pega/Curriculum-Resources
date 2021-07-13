@@ -29,6 +29,9 @@ public class MainDriver {
 		
 		
 		app.post(LOGIN_PATH, ctx -> authController.login(ctx));
+		app.get("/logout", ctx -> authController.logout(ctx));
+		app.get("/checkUser", ctx -> authController.checkUser(ctx));
+		
 		app.get(PLANET_PATH, ctx -> planetController.getAllPlanets(ctx));
 		app.post(PLANET_PATH, ctx -> planetController.postPlanet(ctx));
 		app.post("/deletePlanet", ctx -> planetController.deletePlanet(ctx));
