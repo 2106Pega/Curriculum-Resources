@@ -10,5 +10,7 @@ public interface AuthController {
 	public void logout(Context ctx);
 	
 	public boolean checkUser(Context ctx);
+	
+	public void getPage(Context ctx);
 
 }

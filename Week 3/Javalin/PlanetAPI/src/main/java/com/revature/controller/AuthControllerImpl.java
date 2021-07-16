@@ -1,5 +1,10 @@
 package com.revature.controller;
 
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+
 import com.revature.service.AuthService;
 import com.revature.service.AuthServiceImpl;
 
@@ -19,20 +24,17 @@ public class AuthControllerImpl implements AuthController {
 		String password = ctx.formParam("password");
 		
 		if(authService.authenticateUser(username, password)) {
-			
 			ctx.status(200);
+			ctx.cookieStore("user",authService.createToken(username));			
 			
-			ctx.cookieStore("user",authService.createToken(username));
-			
-			
-			ctx.redirect("view-planets.html");
+
+			ctx.redirect("/home");
 			//if user doesn't exists you'd set it to 407 
 			
 			
 		}else {
 			
-			ctx.status(507);
-			ctx.redirect("login.html");
+		
 		}
 		
 		System.out.println(username);
@@ -44,8 +46,10 @@ public class AuthControllerImpl implements AuthController {
 	@Override
 	public void logout(Context ctx) {
 		ctx.clearCookieStore();
-		System.out.println("hi!");
-		ctx.redirect("login.html");
+	
+		
+		
+		ctx.redirect("/login");
 		
 	}
 
@@ -53,6 +57,21 @@ public class AuthControllerImpl implements AuthController {
 	public boolean checkUser(Context ctx) {
 		
 		return authService.validateToken(ctx.cookieStore("user"));
+	}
+
+
+	@Override
+	public void getPage(Context ctx) {
+
+		RequestDispatcher redir = ctx.req.getRequestDispatcher("login.html");
+		
+		try {
+			redir.forward(ctx.req, ctx.res);
+		} catch (ServletException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }

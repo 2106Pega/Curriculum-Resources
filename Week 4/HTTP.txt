@@ -1,0 +1,40 @@
+HTTP: 
+	Hyper text transfer protocol 
+	Standard for accessing websites and servers
+
+	Request (sent by the client)
+		Header
+		URI 
+		Body 
+		Method:
+			GET (READ) : SAFE : IDEMPOTENT
+			POST (CREATE) : NOT SAFE : NOT IDEMPOTENT
+			PUT (UPDATE) : NOT SAFE : IDEMPOTENT 
+			PATCH (partial update): NOT SAFE: NOT IDEMPOTENT
+			DELETE (DELETE): NOT SAFE : IDEMPOTENT 
+
+		GET vs POST?
+			purpose is different for get and post 
+
+		GET: 
+			is not expected to have a body.
+			sending information through the URI.
+			remain in the browser and can be bookmarked 
+				(bookmarking means you can kind of cache it)
+			designed to request data
+		POST: 
+			post request are not cached 
+			cannot be bookmarked 
+			there is no restrictions on data length. 
+	
+		Safe method?
+			Does not change the state of your server
+
+		Idempotent method?
+			A method that will have the same outcome, regardless
+			of how many times it was performed.  
+
+	Response
+		Header
+		Body 
+		Status code 

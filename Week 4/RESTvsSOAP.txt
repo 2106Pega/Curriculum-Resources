@@ -1,0 +1,123 @@
+Web Services 
+	Offer functinoality over the web. 
+
+There are 2 ways to build our web service.
+	REST - Representational State Transfer 
+	SOAP - Simple Object Access Protocol 
+
+
+REST
+	Is purely based on architectural design. 
+
+	What kind of information can you send over?
+		Strings, JSON, HTML, XML, anything HTTP can handle. 
+
+	Transfer Protocol?
+		HTTP/HTTPS (REST and HTTP grew up at the same time)
+
+	Contract bound?
+		It is not contract bound. (WADL back in the day, but nobody 
+		uses it now) 
+
+	RESTful API:
+	(If you don't meet all of them, then you're REST-based)
+		We need to meet 6 conditions/constraints: 
+
+		1) Stateless:  
+			Involves State.
+			Does not retain/store any data about previous HTTP requests. 
+
+		2) Client-Server :
+			They are seperate entities. 
+
+		3) Uniform Interface:
+			Each entity's API should follow the same pattern, 
+			no operation should be more than 1 URL. 
+				Identification of resource 
+				Manipulation through representation 
+				Self descriptive messages
+				HyperMedia as the ending of the application state
+		
+		4) Layered System:
+			Each component in the layered system cannot "see" beyond
+			the immediate layer it's interacting with. 
+
+		5) Cacheable:
+			A response from the server should declare itself 
+			explicitly or implicitly to 
+			be cacheable or non-cacheable. 
+
+		6) (Optional) Code on demand:
+			Allows clients to have more functionality by 
+			dowloading or getting code from the server. 
+
+
+SOAP:
+	Simple Object Acceess Protocol 
+	(Developed when the internet was much younger and not many standards had been 
+		solidified). 
+
+	What information can we send over?
+		XML, only XML. (not any old xml, follow a certain structure SOAP message)
+		<object><name>Bob</name></object>
+		({name: Bob})
+
+	Transfer protocol?
+		Any protocol, HTTP, HTTPs, FTP, SMTP, etc.. 
+
+	Contract based: 
+		If I want to consume a SOAP service, I need to have a contract from the service. 
+		Contract is in the form of a WSDL file:
+			Web Service Description Language. (Instruction manual)
+
+
+		<definitions>
+			<types> //datatypes used in SOAP services 
+			<message> //parameters and return types expecuted during messaging. 
+			<portttype> //available opertations that can be taken
+				<opertaions> //a specific supported action 
+			<binding> //protocol and encoding 
+
+			<service> //URL location of the service
+				<port> //Indiviidual location of the service
+		</definitions>
+
+
+	Soap Message
+		<envelope> //ROOT tag
+			<header> // metadata 
+			<body> //message content
+				<fault> //Optional which defines errors and exceptions
+		</envelope>
+
+
+
+
+TECMAPS 
+				SOAP					REST
+
+Tools				JAX-WS, ApacheCXF 			Tooless
+Exception Handling		Inbuilt 				External Resources 
+Contract 			WSDL					Not contract bound 
+Message 			XML - SOAP message			Anything
+Atomicity 			Can make any SOAP message atomic	not atomic by default, but can be made compliant with ACID 
+Protocol 			Any 					HTTP/HTTPS
+Security 			Any, allows for additional security.	HTTPS
+
+
+Marshalling Tools: 
+	JSON <-> POJO : Jackson 
+	XML <-> POJO : JAX-B 
+		
+	WSDL <-> Java : JAX-WS (creating SOAP clients) 
+
+	
+
+
+
+
+
+
+
+
+	
